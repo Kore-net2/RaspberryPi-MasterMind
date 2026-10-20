@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MasterMind | Desktop Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="game.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">◎</span> MasterMind <span class="edition">PC EDITION</span></div>
+      <a href="tests.html" class="test-link">Run tests ↗</a>
+    </header>
+    <section class="hero">
+      <span class="eyebrow">A CLASSIC CODE-BREAKING GAME</span>
+      <h1>Crack the <span>colour code.</span></h1>
+      <p>Three slots. Three colours. Unlimited attempts. Guess the hidden sequence using exact and approximate feedback.</p>
+    </section>
+    <div class="layout">
+      <section class="panel play-panel" aria-labelledby="play-heading">
+        <div class="panel-header"><h2 id="play-heading">Make your guess</h2><span class="turn-pill">Attempts: <b id="attempts">0</b></span></div>
+        <p class="helper">Pick a slot, then select its colour. You can also use keys <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd> and <kbd>Enter</kbd>.</p>
+        <div class="slots" aria-label="Your colour combination">
+          <button class="slot active" type="button" aria-label="Position 1: empty"><span class="slot-placeholder">1</span></button>
+          <button class="slot" type="button" aria-label="Position 2: empty"><span class="slot-placeholder">2</span></button>
+          <button class="slot" type="button" aria-label="Position 3: empty"><span class="slot-placeholder">3</span></button>
+        </div>
+        <div class="palette" aria-label="Available colours">
+          <button type="button" class="color-option" data-color="1"><span class="peg peg-1" aria-hidden="true"></span><span>1 · Green</span></button>
+          <button type="button" class="color-option" data-color="2"><span class="peg peg-2" aria-hidden="true"></span><span>2 · Red</span></button>
+          <button type="button" class="color-option" data-color="3"><span class="peg peg-3" aria-hidden="true"></span><span>3 · Blue</span></button>
+        </div>
+        <button type="button" id="submit-guess" class="primary" disabled>Check combination <span aria-hidden="true">→</span></button>
+        <p id="status" class="status" data-variant="info" role="status" aria-live="polite">Choose a colour for all three slots to begin.</p>
+        <p id="secret-reveal" class="secret-reveal" hidden></p>
+        <div class="controls"><button type="button" id="new-game">↻ New game</button><button type="button" id="reveal-secret">Reveal secret</button></div>
+        <details class="demo-settings">
+          <summary>Demo / reproducible test mode</summary>
+          <label for="demo-secret">Optional fixed secret (e.g. 123)</label>
+          <input id="demo-secret" maxlength="3" inputmode="numeric" autocomplete="off" placeholder="Random by default" />
+          <p>Type <code>123</code>, press <b>New game</b>, then submit <code>132</code> (1 exact, 2 approx) and <code>123</code> (win). Empty the field for a random game.</p>
+        </details>
+      </section>
+      <aside class="sidebar">
+        <section class="panel history-panel" aria-labelledby="history-heading">
+          <div class="panel-header"><h2 id="history-heading">Attempt history</h2><span class="subtle">Latest first</span></div>
+          <ol id="history" class="history"><li class="empty-state">Your guesses will appear here.</li></ol>
+        </section>
+        <section class="panel rules-panel" aria-labelledby="rules-heading">
+          <h2 id="rules-heading">How scoring works</h2>
+          <div class="rule"><span class="rule-icon">✓</span><div><b>Exact</b><p>Right colour in the right position.</p></div></div>
+          <div class="rule"><span class="rule-icon">↔</span><div><b>Approximate</b><p>Right colour in another position. Each peg counts only once.</p></div></div>
+          <p class="rule-foot">Colours may repeat, e.g. <code>112</code>. This PC demo does not control Raspberry Pi hardware.</p>
+        </section>
+      </aside>
+    </div>
+    <footer>Originally inspired by a university Raspberry Pi C / ARM Assembly coursework project · Windows-friendly independent simulation</footer>
+  </main>
+</body>
+</html>

@@ -19,3 +19,12 @@ Thumbs.db
 *.key
 *.pem
 .env
+
+# New portable C project build outputs
+portable-c/*.exe
+portable-c/*.obj
+portable-c/*.o
+portable-c/test_matcher
+portable-c/mastermind
+portable-c/*.pdb
+portable-c/*.ilk

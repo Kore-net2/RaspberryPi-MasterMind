@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MasterMind | Automated tests</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="game.js" defer></script>
+  <script src="tests.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.getElementById("result");
+      try {
+        const data = window.runMasterMindTests();
+        target.textContent = `PASS — ${data.pairs} code pairs verified; ${data.assertions} assertions passed.`;
+        target.dataset.variant = "success";
+      } catch (err) {
+        target.textContent = `FAIL — ${err.message}`;
+        target.dataset.variant = "error";
+      }
+    });
+  </script>
+</head>
+<body><main class="shell"><header class="topbar"><div class="brand">◎ MasterMind <span class="edition">TEST RUNNER</span></div><a href="index.html" class="test-link">← Play game</a></header><section class="hero"><span class="eyebrow">AUTOMATED VERIFICATION</span><h1>Game logic <span>test results.</span></h1><p>The matcher checks all 27 possible secret codes against all 27 possible guesses, including duplicate colours.</p></section><section class="panel"><h2>Results</h2><p class="status" id="result" role="status">Running tests…</p><p class="helper">Additional tests cover input validation, game victory, revealed secret, and prevention of guesses after game end.</p></section></main></body>
+</html>

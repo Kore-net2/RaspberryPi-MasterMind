@@ -24,3 +24,9 @@ This document records problems visible during static inspection. No Raspberry Pi
 - Add photos or demonstration video you own, only with consent of any teammates appearing in the media.
 
 Until then, refer to this as a **team coursework prototype / archival code**, not a completed verified game.
+
+## PC additions (independently implemented and tested)
+
+The new `desktop/` browser version and the `portable-c/` reference implementation apply correct exact/approximate scoring with duplicate colours. Both matching implementations passed exhaustive 27 × 27 = 729 combination tests against independent reference matchers on the preparation machine. The C program and its test executable compiled with GCC on Linux; the browser JavaScript matcher was tested with Node.js. The visible HTML page was not end-to-end tested here due to browser policy restrictions. Windows execution of the optional native C version requires a C compiler.
+
+**Remaining open issues are all for the original Raspberry Pi implementation:** the original `mm-matches.s`, GPIO access and original `Makefile` were not changed or validated. Do not claim that the ARM assembly or physical game was fixed.

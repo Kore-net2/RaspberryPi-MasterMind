@@ -1,3 +1,13 @@
+# PC version now available (Windows, no Raspberry Pi needed)
+
+**Play immediately:** open [`desktop/index.html`](desktop/index.html) in Edge/Chrome.
+**Verify the scoring logic:** open [`desktop/tests.html`](desktop/tests.html) (729 exhaustive code pairs, with independent reference comparison and input/game-state tests).
+**Study a corrected C implementation:** see [`portable-c/README.md`](portable-c/README.md), `matcher.c`, `test_matcher.c` and the optional Windows `build.ps1` script.
+
+The browser game and portable C matcher are **new, hardware-independent implementations** for demonstration/teaching. The original Raspberry Pi C/ARM/GPIO files in the repository root are preserved unchanged and **have not been repaired or tested on Raspberry Pi hardware**.
+
+---
+
 # MasterMind on Raspberry Pi — C and ARM Assembly
 
 **Status: university team coursework snapshot — source available, hardware and algorithm correctness NOT verified here.**  
