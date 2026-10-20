@@ -1,0 +1,21 @@
+# Local build outputs
+*.o
+master-mind
+cw2
+testm
+topt
+*.out
+*.core
+core
+
+# Editor and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Sensitive local files and devices
+*.log
+*.key
+*.pem
+.env
